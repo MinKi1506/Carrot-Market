@@ -92,9 +92,9 @@ const Home: NextPage = () => {
           <div className="">
             <span>3000원</span>
           </div>
-          <div className="bg-green-200 py-3 px-10 rounded-2xl">
+          <button className="bg-green-200 py-3 px-10 rounded-2xl">
             장바구니 담기
-          </div>
+          </button>
         </div>
       </div>
 
