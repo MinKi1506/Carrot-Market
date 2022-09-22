@@ -1,104 +1,78 @@
 import type { NextPage } from "next";
-import Image from "next/image";
 
 const Home: NextPage = () => {
   return (
-    <div className="bg-slate-400 py-20 px-[400px] flex flex-col space-y-5">
-      {/* 같은 기능 (flex와 grid용법 이해하기) */}
-      {/* <div className="bg-slate-400 p-10 gird gap-10"> */}
-      <div className="bg-white p-10 mx-500 shadow-xl rounded-2xl">
-        <div>
-          <span className="font-semibold">Select Item</span>
-          <div className="flex justify-between py-2">
-            <span className="text-gray-500">아이템1</span>
-            <span className="font-semibold">100원</span>
-          </div>
-          <div className="flex justify-between mb-4">
-            <span className="text-gray-500">아이템2</span>
-            <span className="font-semibold">200원</span>
-          </div>
-          <div className="flex justify-between border-t-2 border-dashed py-3">
-            <span>Total</span>
-            <span className="font-semibold">300원</span>
-          </div>
-          <div className="mt-5 m-auto w-2/4 bg-green-200 text-black p-3 text-center rounded-2xl">
-            ChechOut
-          </div>
-        </div>
-        <div></div>
-      </div>
-
-      <div className="bg-white shadow-xl overflow-hidden rounded-2xl">
-        <div className="bg-green-200 px-5 pt-8 pb-12 ">
-          <span>Profile</span>
-        </div>
-        <div className="bg-white rounded-2xl p-5 relative -top-6">
-          <div className="flex justify-between items-end relative -top-16 ">
-            <div className="flex flex-col items-center">
-              <span className="text-sm text-gray-500">Order</span>
-              <span className="font-medium">700원</span>
-            </div>
-            <div className="w-24 h-24 relative bg-orange-400 rounded-full"></div>
-            <div className="flex flex-col items-center">
-              <span className="text-sm text-gray-500">selling</span>
-              <span className="font-medium">700원</span>
+    <div className="flex flex-col space-y-5 px-5 py-10">
+      {[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((_, i) => (
+        <div
+          className="flex justify-between border-b pb-4 cursor-pointer"
+          key={i}
+        >
+          <div className="flex space-x-4">
+            <div className="w-20 h-20 bg-gray-400 rounded-full" />
+            <div className="pt-2 flex flex-col">
+              <h3 className="text-sm font-medium text-black">
+                New iPhone {i + 1}
+              </h3>
+              <span className="text-xs text-gray-500">Black</span>
+              <span className="font-medium mt-1">${(i + 1) * 50}</span>
             </div>
           </div>
-          <div className="flex flex-col relative -mt-14 -mb-5 items-center">
-            <span className="">Elder</span>
-            <span className="">한국</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-white p-10 shadow-xl rounded-2xl">
-        <div className="flex justify-between">
-          <div className="">⬅️</div>
-          <div className="flex space-x-3">
-            <div className="">
-              ⭐️<span>4.8</span>
-            </div>
-            <div className="">💖</div>
-          </div>
-        </div>
-        <div className="p-8 h-[72]">
-          <Image
-            alt="느타리"
-            src="/images/ntl.jpg"
-            width={72}
-            height={72}
-            layout="responsive"
-          />
-        </div>
-        <div className="flex flex-col">
-          <span className="">쥬키니 호박</span>
-          <span className="">호박</span>
-        </div>
-        <div className="flex justify-between">
-          <div className="space-x-2">
-            <button className="w-5 h-5 rounded-full bg-red-400" />
-            <button className="w-5 h-5 rounded-full bg-yellow-400" />
-            <button className="w-5 h-5 rounded-full bg-sky-400" />
-          </div>
-          <div className="flex space-x-3">
-            <div className="">+</div>
-            <div className="">
+          <div className="flex items-end space-x-3">
+            <div className="flex space-x-0.5 items-center">
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                ></path>
+              </svg>
               <span>1</span>
             </div>
-            <div className="">-</div>
+            <div className="flex space-x-0.5 items-center">
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                ></path>
+              </svg>
+              <span>1</span>
+            </div>
           </div>
         </div>
-        <div className="flex justify-between mt-6 -mb-5 items-center">
-          <div className="">
-            <span>3000원</span>
-          </div>
-          <button className="bg-green-200 py-3 px-10 rounded-2xl">
-            장바구니 담기
-          </button>
-        </div>
-      </div>
-
-      <div className="bg-white p-10 shadow-xl rounded-2xl"></div>
+      ))}
+      <button className="fixed bottom-12 right-12 rounded-full p-3 bg-orange-400 hover:bg-orange-500 transition-colors text-white">
+        <svg
+          className="h-6 w-6"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+          />
+        </svg>
+      </button>
     </div>
   );
 };
