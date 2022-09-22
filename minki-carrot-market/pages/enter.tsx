@@ -1,21 +1,51 @@
 import { useState } from "react";
 
+//ClassName을 간편하게 정의하는 함수
+function cls(...className: string[]) {
+  return className.join(" "); //join - 배열내 아이템들을 괄호안에 넣은 문자로 구분하여 한 string으로 합치는 기능 [1, 2, 3].join("/")  => 1/2/3
+}
+
 export default function Enter() {
   const [method, setMethod] = useState<"email" | "phone">("email");
   const onEmailClick = () => setMethod("email");
   const onPhoneClick = () => setMethod("phone");
   return (
     <div>
-      <h3>Enter to Carrot</h3>
+      <h3 className="text-center p-4 text-gray-500">
+        Welcome to{" "}
+        <span className="font-extrabold text-3xl text-orange-500">
+          Carrot Market
+        </span>
+      </h3>
       <div>
-        <div>
+        <div className="text-center my-2 text-gray-500 font-medium border-b-2">
           <h5>Enter using:</h5>
-          <div>
-            <button onClick={onEmailClick}>Email</button>
-            <button onClick={onPhoneClick}>Phone</button>
+          <div className="grid grid-cols-2 w-full gap-8 mt-2">
+            <button
+              className={cls(
+                "font-medium border-b-2",
+                method === "email"
+                  ? " border-orange-500 text-orange-400"
+                  : "border-transparent"
+              )}
+              onClick={onEmailClick}
+            >
+              Email Address
+            </button>
+            <button
+              className={cls(
+                "font-medium border-b-2",
+                method === "phone"
+                  ? "border-orange-500 text-orange-400"
+                  : "border-transparent"
+              )}
+              onClick={onPhoneClick}
+            >
+              Phone Number
+            </button>
           </div>
         </div>
-        <form>
+        <form className="">
           <label>
             {method === "email" ? "Email address" : null}
             {method === "phone" ? "Phone number" : null}
