@@ -1,10 +1,16 @@
 import type { NextPage } from "next";
+import { useRouter } from "next/router";
 
 const Home: NextPage = () => {
+  const router = useRouter();
+
   return (
     <div className="flex flex-col space-y-5 px-5 py-10">
       {[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((_, i) => (
         <div
+          onClick={() => {
+            router.push(`/items/${i}`);
+          }}
           className="flex justify-between border-b pb-4 cursor-pointer"
           key={i}
         >

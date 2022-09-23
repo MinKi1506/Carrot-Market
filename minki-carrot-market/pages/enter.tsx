@@ -10,7 +10,7 @@ export default function Enter() {
   const onEmailClick = () => setMethod("email");
   const onPhoneClick = () => setMethod("phone");
   return (
-    <div className="px-4 w-[500px]">
+    <div className="px-5 w-[500px]">
       <h3 className="text-center p-4 text-gray-500">
         Welcome to{" "}
         <span className="font-extrabold text-3xl text-orange-500">
@@ -46,13 +46,14 @@ export default function Enter() {
           </div>
         </div>
         <form className="flex flex-col mt-4">
-          <label className="text-sm font-medium text-gray-700">
+          <label htmlFor="input" className="text-sm font-medium text-gray-700">
             {method === "email" ? "Email address" : null}
             {method === "phone" ? "Phone number" : null}
           </label>
           <div className="mt-1">
             {method === "email" ? (
               <input
+                id="input"
                 className="appearance-none w-full px-3 border-gray-300 rounded-md shadow-sm placeholder-gray-400 
                 focus:ring-orange-500
                 focus:border-orange-500"
@@ -66,6 +67,7 @@ export default function Enter() {
                   +82
                 </span>
                 <input
+                  id="input"
                   className="appearance-none w-full px-3 border-gray-300 rounded-md shadow-sm placeholder-gray-400 
                   rounded-l-none
                 focus:ring-orange-500
