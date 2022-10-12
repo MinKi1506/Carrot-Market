@@ -29,9 +29,9 @@ const ChatDetail: NextPage = () => {
             type="text"
             className="shadow-sm w-full border-2 focus:ring-orange-500 rounded-full border-gray-400 focus:border-orange-500"
           />
-          <span className="absolute right-1 hover:text-orange-600 cursor-pointer">
+          <button className="absolute right-1 focus:ring-2 focus:ring-orange-500 focus:ring-offset-1 ring-offset-3 cursor-pointer bg-orange-400 text-white rounded-full px-3 py-1 mr-1 ">
             &rarr;
-          </span>
+          </button>
         </div>
       </div>
     </div>
